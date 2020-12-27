@@ -17,6 +17,10 @@ body {
   padding: 0 16px;
 }
 
+.container img{
+  max-width: auto;  
+}
+
 .page-header {
   margin: 0 0 180px;
   padding: 32px 0 32px;
