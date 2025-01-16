@@ -31,6 +31,57 @@
         </ul>
       </section>
 
+      <div
+  onclick="launchChat()" 
+  style="position: fixed; bottom: 20px; right: 30px; border-radius: 40px; background: #f03f0a; color: white; display: flex; align-items: center; padding: 10px 20px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); transition: background 0.3s ease, box-shadow 0.3s ease; cursor: pointer;"
+  onmouseover="this.style.background='#ff0000'; this.style.boxShadow='0px 6px 10px rgba(0, 1, 0, 0.9)';" 
+  onmouseout="this.style.background='#f03f0a'; this.style.boxShadow='0px 4px 6px rgba(0, 0, 0, 0.2)';"
+>
+  <img 
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAASFBMVEVHcEwcHx8cHx8cHx8cHx8BAgIbCA7p6ur29vbz8/Oenp43tJc7xKQqrY7///89Njk+0rAIiGoLkXEadl+RkpLX19cTUkLDw8N+0KodAAAABXRSTlMAjOr/iyjf/Z4AAAC2SURBVHgBfdJRDoMgEEVRdBgrqFoE6v532gFN+wzI/SI5eYQPlFJdT5V6rSSkOyul6bEOh+WUGl3IZzRcIfJrNMaMlqY5twyI45ralnducTc0GXm6rIrzaXsVvZ+S1TCwvNPvqQIjk5TVFa8NgtJH0N+XgM55IsT4u5Y3KTCiPR8khXSygNKaiiHEfMBr8xSyjCh6/O1gWMIWdoCiZKMx0cqhROGUEGCj9gfrnlE3P7WkgYE6pb79uRJ9BHfd5wAAAABJRU5ErkJggg==" 
+    alt="Button Icon" 
+    style="border-radius: 50%; margin-right: 10px; height: 50px; width: 50px;"
+  />
+  <h3 
+    style="margin: 0; font-size: 18px; font-weight: normal; white-space: nowrap;"
+  >
+    Ubiquity Retirement
+  </h3>
+</div>
+
+<script type="text/javascript">
+
+  function initEmbeddedMessaging() {
+    try {
+      embeddedservice_bootstrap.settings.language = 'en_US';
+      embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true
+
+      embeddedservice_bootstrap.init(
+        '00DcY000002H7dR',
+        'Sales_Chat',
+        'https://myubiquity--moe3.sandbox.my.site.com/ESWSalesChat1697460991337',
+        { scrt2URL: 'https://myubiquity--moe3.sandbox.my.salesforce-scrt.com' }
+      );
+    } catch (err) {
+      console.error('Error loading Embedded Messaging: ', err);
+    }
+  }
+
+  function launchChat() {
+    embeddedservice_bootstrap.utilAPI.launchChat()
+      .then(() => {
+        console.log('Successfully launched Messaging');
+      })
+      .catch(() => {
+        console.log('Some error occurred when launching Messaging');
+      })
+      .finally(() => {
+        console.log('Successfully launched Messaging - Finally');
+      });
+  }
+</script>
+<script type="text/javascript" src="https://myubiquity--moe3.sandbox.my.site.com/ESWSalesChat1697460991337/assets/js/bootstrap.min.js" onload="initEmbeddedMessaging()"></script>
+
       <footer class="site-footer">
         <p>© Кекс, 2018</p>
         <p>Контактов нет, я сам вас найду</p>
